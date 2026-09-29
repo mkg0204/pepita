@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário! ✨</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+
+    <!-- Canvas para Partículas Fofas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="container">
+
+        <header class="hero">
+            <div class="hero-badge">Com Carinho  </div>
+            <h1 class="hero-title">Feliz Aniversário! ✨</h1>
+            <p class="hero-subtitle">
+  "Lá fora faz um dia lindo, e o meu presente é ter você aqui..." 
+  <br>
+  <small style="font-size: 0.85em; opacity: 0.8;">Que Maravilha - Jorge Ben Jor</small>
+</p>
+            
+            <div class="cake-container" id="cakeContainer" onclick="blowCandle()">
+                <div class="cake-icon">
+                    <div class="flame" id="flame"></div>
+                    🎂
+                </div>
+            </div>
+            <div class="candle-instruction" id="candleInstruction">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Clique no bolo para assoprar a vela!
+            </div>
+        </header>
+
+        <section>
+            <h2 class="section-title">Para Você</h2>
+            <p class="section-subtitle">Textinho que não pode faltar.</p>
+            
+            <div class="letter-card">
+                <div class="letter-content">
+                    <p>Hoje éh o seu dia especial, e eu infelizmente não conseguiria deixar passar em branco sem expressar o carinho que eu sinto por você. Eu te desejo um ótimo aniversário.</p>
+                    <p>Mesmo que a vida tome caminhos diferentes e nossos ritmos não sejam os mesmos de antes, o carinho, o respeito e a admiração que tenho por você continuam intactos. Torço genuinamente por cada conquista sua e por cada sorriso sincero.</p>
+                    <p>Que você aproveite cada segundo, cada momento, se sentindo viva e livre; Seus dias, que sejam cheios das suas risadas, muita música (principalmente MPB e Rock), muito amor, muita comida e sucesso; Desejo que você se cuide, da sua saúde física e mental,  boas risadas e momentos de verdadeira felicidade. Você merece conquistar tudo aquilo que deseja.</p>
+                    <p>Eu agradeço por todos os momentos que vivi ao seu lado, talvez eu não consiga expressar essa gratidão, mas eu fico tão feliz lembrando da sua risada, o quanto eu desejo que esteja feliz. Todos os dias que você esteve ao meu lado, todas as vezes que jogou comigo, todo o esforço que fez, todas as músicas maravilhosas que ouço que você me apresentou, séries que você comentou que eu assisti, suas caidas, minhas tropeçadas e você rindo, suas poses, suas fotos lindas que você tira. Não sei o que eu posso chamar isso, mas eu sei que esse sentimento que eu sinto é o mais bonito.</p>
+                    <p>Eu desejo que você continue sendo essa pessoa maravilhosa que você é, que apesar de ter passado por tanta coisa ainda se mantém sendo uma das pessoas que se eu ver de longe você vai estar sorrindo. Continue sendo forte, pepita. Não posso dizer que isso importa, mas eu tenho muito orgulho de você.</p>
+                    <p>Peço desculpas pelas nossas incoveniências, não vou dizer que vou estar aqui para você por que isso não cabe mais a mim. O seu abraço sempre vai estar guardado.</p>
+                    <p>Aproveite muito o seu dia.</p>
+                    <div class="letter-signature">Com admiração e carinho, Amora.</div>
+                </div>
+            </div>
+        </section>
+
+
+    <main class="caixa-principal">
+
+    <h1>Músicas importantes ♫</h1>
+
+    <section class="tocador">
+
+        <div class="arte-container">
+
+            <img 
+                id="capaAtual" 
+                src="./src/img/BB.jfif" 
+                alt="Capa da música"
+            >
+
+            <div class="disco" id="discoMaluco">
+                <div class="miolo"></div>
+            </div>
+
+        </div>
+
+        <h2 id="tituloAtual">BB</h2>
+
+        <p id="artistaAtual">Tim Bernardes</p>
+
+
+        <div class="controle-tempo">
+
+            <span id="tempoAtual">0:00</span>
+
+            <input
+                type="range"
+                id="barraTempo"
+                value="0"
+                min="0"
+                max="100"
+                step="0.1"
+            >
+
+            <span id="tempoTotal">0:00</span>
+
+        </div>
+
+
+        <button 
+            id="botaoCentral" 
+            type="button"
+            aria-label="Reproduzir ou pausar"
+        >
+            ▶
+        </button>
+
+
+        <audio 
+            id="coisaEstranha"
+            preload="metadata"
+        ></audio>
+
+    </section>
+
+    <img src="./src/mp4/Tim Bernardes - BB (Garupa de Moto Amarela) (Audio Oficial + Lyrics) - Tim Bernardes.mp3" alt="">
+
+
+    <section class="lista">
+
+        <div class="faixa" data-numero="0">
+
+            <img 
+                src="./src/img/BB.jfif" 
+                alt="Capa de BB"
+            >
+
+            <div>
+                <strong>BB</strong>
+                <p>Tim Bernardes</p>
+            </div>
+
+        </div>
+
+
+        <div class="faixa" data-numero="1">
+
+            <img 
+                src="./src/img/Eu Preciso Dizer Que Te Amo.jfif"
+                alt="Capa de Eu Preciso Dizer Que Te Amo"
+            >
+
+            <div>
+                <strong>Eu Preciso Dizer Que Te Amo</strong>
+                <p>Bebel Gilberto & Cazuza</p>
+            </div>
+
+        </div>
+
+
+        <div class="faixa" data-numero="2">
+
+            <img 
+                src="./src/img/Faróis.jfif"
+                alt="Capa de Faróis"
+            >
+
+            <div>
+                <strong>Faróis</strong>
+                <p>Chapéu de Palha</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="spotify">
+
+        <h2>⭐ Playlist que me lembra você</h2>
+
+        <iframe 
+            data-testid="embed-iframe"
+            src="https://open.spotify.com/embed/playlist/4KkxGEn40QJwgIwurPfJ8C?utm_source=generator&si=e9f0100a865b4b66"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+        </iframe>
+
+    </section>
+    <
+
+</main>
+
+    <br>
+    <br>
+    <br>
+
+        <section class="jar-section">
+            <h2 class="section-title">Pote de Versos</h2>
+            <p class="section-subtitle">Clique no pote para retirar um verso.</p>
+
+            <div class="jar-container" onclick="drawNote()">
+                <svg class="jar-svg" viewBox="0 0 100 120">
+                    <path d="M30,10 L70,10 L70,20 L30,20 Z" fill="#D8A48F" />
+                    <path d="M25,20 L75,20 L80,30 L80,110 Q80,115 75,115 L25,115 Q20,115 20,110 L20,30 Z" fill="black" stroke="#D8A48F" stroke-width="2" />
+                    <!-- Bilhetinhos dentro -->
+                    <rect x="30" y="80" width="15" height="20" rx="2" fill="#F4E3E3" transform="rotate(15 30 80)"/>
+                    <rect x="50" y="85" width="18" height="18" rx="2" fill="#E2DBEB" transform="rotate(-10 50 85)"/>
+                    <rect x="40" y="70" width="20" height="15" rx="2" fill="#FAF6F0" transform="rotate(5 40 70)"/>
+                </svg>
+            </div>
+
+            <div class="jar-note-display" id="noteDisplay">
+                ✨ Clique no pote acima para tirar um verso de uma música!
+            </div>
+        </section>
+
+
+
+
+    <footer>
+        <section class="final-section" id="finalSection">
+    <div class="final-content">
+        <div class="final-heart">♡</div>
+
+        <h2>Feliz aniversário, pepita.</h2>
+
+        <p>Que maravilha ter cruzado o seu caminho.</p>
+
+        <div class="final-line"></div>
+
+        <span class="final-small">E que esse seja apenas mais um capítulo.</span>
+
+        <button class="restart-button" onclick="voltarInicio()">
+            ↻ começar novamente
+        </button>
+    </div>
+</section>
+    </footer>
+
+    <!-- Lógica JavaScript -->
+    <script src="./src/JS/script.js"></script>
+</body>
+</html>
